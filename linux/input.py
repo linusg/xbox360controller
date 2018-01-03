@@ -1,14 +1,13 @@
 from struct import pack
-from ctypes import c_buffer
+from ctypes import c_buffer, c_uint32
 from xbox360controller.linux.ioctl import _IOR, _IOC_READ, _IOC, _IOW
-from xbox360controller.linux.types import __u32
 
 
 # https://github.com/torvalds/linux/blob/master/include/uapi/linux/input.h#L26
 def input_event(type_, code, value, tv_sec=0, tv_usec=0):
     return pack('2l2hi', tv_sec, tv_usec, type_, code, value)
 
-EVIOCGVERSION = _IOR('E', 0x01, __u32)
+EVIOCGVERSION = _IOR('E', 0x01, c_uint32)
 
 
 # https://github.com/torvalds/linux/blob/master/include/uapi/linux/input.h#L159

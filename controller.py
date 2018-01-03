@@ -6,14 +6,12 @@ Partly inspired by the following libraries/codes:
 """
 
 import os
-import signal
 import struct
 import sys
 import time
 from array import array
 from collections import namedtuple
 from fcntl import ioctl
-from functools import partial
 from glob import glob
 from threading import Thread, Event
 
@@ -458,49 +456,3 @@ class Xbox360Controller:
         self._led_file.close()
         self._event_thread_stopped.set()
         self._event_thread.join()
-
-
-def main():
-    try:
-        with Xbox360Controller() as controller:
-            controller.info()
-
-            def p(msg, _):
-                print(msg)
-
-            def kill(_):
-                # Send a SIGINT to stop signal.pause
-                os.kill(os.getpid(), signal.SIGINT)
-
-            def event(_):
-                controller.set_led(Xbox360Controller.LED_OFF)
-                time.sleep(0.1)
-                controller.set_led(Xbox360Controller.LED_ROTATE)
-                controller.set_rumble(
-                    abs(controller.axis_l.x), abs(controller.axis_l.y), 1000)
-                time.sleep(1)
-                controller.set_rumble(0, 0)
-                controller.set_led(Xbox360Controller.LED_OFF)
-
-            controller.button_a.when_pressed = partial(p, 'a')
-            controller.button_b.when_pressed = partial(p, 'b')
-            controller.button_x.when_pressed = partial(p, 'x')
-            controller.button_y.when_pressed = partial(p, 'y')
-            controller.button_trigger_l.when_pressed = partial(p, 'trigger_l')
-            controller.button_trigger_r.when_pressed = partial(p, 'trigger_r')
-            controller.button_thumb_l.when_pressed = partial(p, 'thumb_l')
-            controller.button_thumb_r.when_pressed = partial(p, 'thumb_r')
-            controller.button_select.when_pressed = kill
-            controller.button_start.when_pressed = partial(p, 'start')
-            controller.button_mode.when_pressed = event
-            controller.axis_l.when_moved = partial(p, 'axis_l')
-            controller.axis_r.when_moved = partial(p, 'axis_r')
-            controller.hat.when_moved = partial(p, 'hat')
-            controller.trigger_l.when_moved = partial(p, 'trigger_l')
-            controller.trigger_r.when_moved = partial(p, 'trigger_r')
-            signal.pause()
-    except KeyboardInterrupt:
-        pass
-
-if __name__ == '__main__':
-    main()

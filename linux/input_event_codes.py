@@ -39,9 +39,6 @@ BTN_MODE = 0x13c
 BTN_THUMBL = 0x13d
 BTN_THUMBR = 0x13e
 
-# https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h#L693
-KEY_MAX = 0x2ff
-
 # https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h#L717
 ABS_X = 0x00
 ABS_Y = 0x01
@@ -71,7 +68,3 @@ ABS_TOOL_WIDTH = 0x1c
 ABS_VOLUME = 0x20
 
 ABS_MISC = 0x28
-
-# https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h#L763
-ABS_MAX = 0x3f
-ABS_CNT = ABS_MAX+1
