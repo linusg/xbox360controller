@@ -14,6 +14,8 @@ The following features are supported:
 
 ## Installation
 
+You will most likely need Python 3.4 or above.
+
 Any Linux distribution:
 
 ```
