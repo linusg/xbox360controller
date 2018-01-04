@@ -1,7 +1,7 @@
 from setuptools import setup
 from xbox360controller import __version__
 
-with open('README.md', 'r') as f:
+with open('README.rst', 'r') as f:
     long_description = f.read()
 
 setup(
