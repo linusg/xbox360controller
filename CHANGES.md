@@ -1,5 +1,9 @@
 # Release history
 
+## `1.0.1` (04.01.2017)
+
+- Fix rendering issue on PyPI
+
 ## `1.0.0` (04.01.2017)
 
 - Initial release
