@@ -1,0 +1,18 @@
+language: python
+
+os:
+  - linux
+
+python:
+  - "3.4"
+  - "3.5"
+  - "3.6"
+  - "nightly"
+
+matrix:
+  allow_failures:
+      - python: "nightly"
+
+install:
+  - python -m pip install -U pip
+  - pip install -e .
