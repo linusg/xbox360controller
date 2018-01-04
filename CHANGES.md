@@ -1,5 +1,9 @@
 # Release history
 
+## `1.0.2` (04.01.2018)
+
+- Fix dates in CHANGES.md
+
 ## `1.0.1` (04.01.2018)
 
 - Fix rendering issue on PyPI
