@@ -1,5 +1,10 @@
 # Release history
 
+## `1.0.3` (04.01.2018)
+
+- Add Travis CI
+- Update examples
+
 ## `1.0.2` (04.01.2018)
 
 - Fix dates in CHANGES.md
