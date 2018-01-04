@@ -16,6 +16,5 @@ matrix:
 install:
   - sudo apt-get -qq update
   - sudo apt-get -y install pandoc
-  - python -m pip install -U pip
   - pandoc --from=markdown --to=rst --output=README.rst README.md
   - pip install -e .
