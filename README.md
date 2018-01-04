@@ -40,11 +40,24 @@ import signal
 from xbox360controller import Xbox360Controller
 
 
+def on_button_pressed(button):
+    print('Button {0} was pressed'.format(button.name))
+
+
+def on_button_released(button):
+    print('Button {0} was released'.format(button.name))
+
+
 def on_axis_moved(axis):
     print('Axis {0} moved to {1} {2}'.format(axis.name, axis.x, axis.y))
 
 try:
-    with Xbox360Controller() as controller:
+    with Xbox360Controller(0, axis_threshold=0.2) as controller:
+        # Button A events
+        controller.button_a.when_pressed = on_button_pressed
+        controller.button_a.when_released = on_button_released
+
+        # Left and right axis move event
         controller.axis_l.when_moved = on_axis_moved
         controller.axis_r.when_moved = on_axis_moved
 
@@ -53,7 +66,7 @@ except KeyboardInterrupt:
     pass
 ```
 
-The above code will run until `Ctrl+C` is pressed. Each time on of the left or right axis is moved, the event will be processed.
+The above code will run until `Ctrl+C` is pressed. Each time on of the left or right axis is moved, the event will be processed. Additionally, the events of the A button are being processed.
 Please note, there seems to be a bug left that the KeyboardInterrupt will not show up directly when raised, but when the next controller event is registered. In case the program hangs on `Ctrl+C`, just press or move any of the controller's buttons or axes.
 
 ### `Xbox360Controller` parameters
@@ -82,7 +95,7 @@ This will enable rumble on both sides of the controller with each 50% strength f
 import time
 from xbox360controller import Xbox360Controller
 
-with Xbox360Controller(0) as controller:
+with Xbox360Controller() as controller:
     controller.set_led(Xbox360Controller.LED_ROTATE)
     time.sleep(1)
     controller.set_led(Xbox360Controller.LED_OFF)
