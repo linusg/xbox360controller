@@ -1,4 +1,5 @@
 # xbox360controller
+> A pythonic Xbox360 controller API built on top of the xpad Linux kernel driver.
 
 [![PyPI Version][pypi-image]][pypi-url] [![Build Status][travis-image]][travis-url] [![Code Health][landscape-image]][landscape-url]
 
