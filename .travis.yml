@@ -17,6 +17,7 @@ install:
   - sudo apt-get -qq update
   - sudo apt-get -y install pandoc
   - pandoc --from=markdown --to=rst --output=README.rst README.md
+  - pip install codecov
   - pip install -e .
 
-script: python -V
+script: codecov
