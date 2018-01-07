@@ -23,6 +23,7 @@ install:
 
 script:
   - python -V
+  - coverage report
 
 after_success:
   - codecov
