@@ -1,4 +1,5 @@
 language: python
+sudo :false
 
 os:
   - linux
@@ -20,4 +21,8 @@ install:
   - pip install codecov
   - pip install -e .
 
-script: codecov
+script:
+  - python -V
+
+after_success:
+  - codecov
