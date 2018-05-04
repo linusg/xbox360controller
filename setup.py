@@ -1,7 +1,7 @@
 from setuptools import setup
 from xbox360controller import __version__
 
-with open('README.rst', 'r') as f:
+with open('README.md', 'r') as f:
     long_description = f.read()
 
 setup(
@@ -11,11 +11,12 @@ setup(
     description='A pythonic Xbox360 controller API built on top of the xpad '
                 'Linux kernel driver.',
     long_description=long_description,
+    long_description_content_type='text/markdown',
     author='Linus Groh',
     author_email='mail@linusgroh.de',
     license='MIT',
     url='https://github.com/linusg/xbox360controller',
-    download_url='https://pypi.python.org/pypi/xbox360controller/',
+    download_url='https://pypi.org/project/xbox360controller/',
     keywords=['xbox', 'xbox360', 'controller', 'gamepad', 'game',
               'raspberry pi', 'event', 'led', 'rumble'],
     classifiers=[
@@ -28,6 +29,7 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3 :: Only',
         'Topic :: Games/Entertainment',
         'Topic :: Software Development :: Libraries',

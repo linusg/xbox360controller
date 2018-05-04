@@ -90,5 +90,4 @@ ENV/
 
 # Custom files
 upload.sh
-README.rst
 .idea/

@@ -28,8 +28,10 @@ Global installations might require the usage of `sudo` or working directly from 
 If the `pip3` command cannot be found, try `pip` or make sure to have pip installed properly:
 
 ```
-sudo apt-get install python3-pip
+sudo apt install python3-pip
 ```
+
+Of course you don't need `sudo` when working from a root shell.
 
 ## Usage
 
