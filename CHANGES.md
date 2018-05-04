@@ -1,5 +1,9 @@
 # Release history
 
+## 1.0.5 (04.05.2018)
+
+- Remove debug information
+
 ## 1.0.4 (04.01.2018)
 
 - Add documentation and simplify README.md

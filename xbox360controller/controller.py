@@ -228,7 +228,6 @@ class Xbox360Controller:
                                 .format(idx=self.index))[0]
         event_number = int(
             os.path.basename(event_file_sysfs).replace('event', ''))
-        print(event_number)
         return '/dev/input/event{number}'.format(number=event_number)
 
     def _get_led_file(self):
