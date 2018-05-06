@@ -6,6 +6,7 @@ Partly inspired by the following libraries/codes:
 """
 
 import os
+import select
 import struct
 import sys
 import time
@@ -266,7 +267,11 @@ class Xbox360Controller:
 
     def get_event(self):
         try:
-            buf = self._dev_file.read(8)
+            r, w, e = select.select([self._dev_file], [], [], 0)
+            if self._dev_file in r:
+                buf = self._dev_file.read(8)
+            else:
+                return
         except ValueError:
             # File closed in main thread
             return
@@ -452,6 +457,8 @@ class Xbox360Controller:
     def close(self):
         self._dev_file.close()
         self._event_file.close()
-        self._led_file.close()
+        if self._led_file is not None:
+            self._led_file.close()
+
         self._event_thread_stopped.set()
         self._event_thread.join()

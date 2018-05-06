@@ -69,7 +69,6 @@ except KeyboardInterrupt:
 ```
 
 The above code will run until `Ctrl+C` is pressed. Each time on of the left or right axis is moved, the event will be processed. Additionally, the events of the A button are being processed.
-Please note, there seems to be a bug left that the KeyboardInterrupt will not show up directly when raised, but when the next controller event is registered. In case the program hangs on `Ctrl+C`, just press or move any of the controller's buttons or axes.
 
 See the [API reference](https://github.com/linusg/xbox360controller/blob/master/docs/API.md#xbox360controller-parameters) for a more detailed explanation of the `Xbox360Controller` class and how to use all available buttons, axes and the hat.
 
