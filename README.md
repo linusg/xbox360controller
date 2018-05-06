@@ -1,5 +1,5 @@
 # xbox360controller
-> A pythonic Xbox360 controller API built on top of the xpad Linux kernel driver.
+> A pythonic Xbox360 controller API built on top of the `xpad` Linux kernel driver.
 
 [![PyPI Version][pypi-image]][pypi-url] [![Build Status][travis-image]][travis-url] [![Code Health][landscape-image]][landscape-url]
 
@@ -14,7 +14,7 @@ The following features are supported:
 
 ## Installation
 
-You will most likely need Python 3.4 or above.
+You will need Python 3.4 or above.
 
 Any Linux distribution:
 
@@ -22,7 +22,7 @@ Any Linux distribution:
 pip3 install -U xbox360controller
 ```
 
-You might also use a _virtual environment_, or do a per-user install by providing the `--user` flag to above command.
+You might also use a _virtual environment_ or do a per-user install by providing the `--user` flag to above command.
 Global installations might require the usage of `sudo` or working directly from a root shell but are **not recommended**.
 
 If the `pip3` command cannot be found, try `pip` or make sure to have pip installed properly:
@@ -83,7 +83,7 @@ with Xbox360Controller() as controller:
     time.sleep(1)
 ```
 
-This will enable rumble on both sides of the controller with each 50% strength for one second (1000ms). Note that the method call is non-blocking, thus we need to manually wait one second for the rumble to finish. You won't need this in a regular use case.
+This will enable rumble on both sides of the controller with each 50% strength for one second (1000ms). Note that the method call is non-blocking, thus we need to manually wait one second for the rumble to finish. You won't need this in a regular use case with `signal.pause()`.
 
 ### LED
 
@@ -112,7 +112,7 @@ with Xbox360Controller() as controller:
 
 ## Development/contributing
 
-This project is still in its early days and I really appreciate all kinds of contributions - may it be new or improved code, documentation or just a simple typo fix.
+This project is now in a somewhat stable state, and I really appreciate all kinds of contributions - may it be new or improved code, documentation or just a simple typo fix.
 Just provide me a PR and I'll be happy to include your work!
 
 For feature requests, general questions or problems you face regarding this package please [open an issue](https://github.com/linusg/xbox360controller/issues/new).
