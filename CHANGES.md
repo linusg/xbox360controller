@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [1.1.0] - 2018-05-07
+### Changed
+- Push development status to 'Beta'
+
 ## [1.0.6] - 2018-05-07
 ### Changed
 - Fix bug where event loop won't exit until next event
@@ -42,7 +46,8 @@
 - Added some documentation
 - Released on GitHub and PyPI
 
-[Unreleased]: https://github.com/linusg/xbox360controller/compare/v1.0.6...HEAD
+[Unreleased]: https://github.com/linusg/xbox360controller/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/linusg/xbox360controller/compare/v1.0.6...v1.1.0
 [1.0.6]: https://github.com/linusg/xbox360controller/compare/v1.0.5...v1.0.6
 [1.0.5]: https://github.com/linusg/xbox360controller/compare/v1.0.4...v1.0.5
 [1.0.4]: https://github.com/linusg/xbox360controller/compare/v1.0.3...v1.0.4
