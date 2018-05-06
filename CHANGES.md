@@ -1,5 +1,10 @@
 # Release history
 
+## 1.0.6 (07.05.2018)
+
+- Fix bug where event loop won't exit until next event
+- Fix `AttributeError` when LED file cannot be accessed but closing is attempted
+
 ## 1.0.5 (04.05.2018)
 
 - Remove debug information
