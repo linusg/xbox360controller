@@ -76,13 +76,15 @@ See the [API reference](https://github.com/linusg/xbox360controller/blob/master/
 ### Rumbling
 
 ```python
+import time
 from xbox360controller import Xbox360Controller
 
 with Xbox360Controller() as controller:
     controller.set_rumble(0.5, 0.5, 1000)
+    time.sleep(1)
 ```
 
-This will enable rumble on both sides of the controller with each 50% strength for one second (1000ms).
+This will enable rumble on both sides of the controller with each 50% strength for one second (1000ms). Note that the method call is non-blocking, thus we need to manually wait one second for the rumble to finish. You won't need this in a regular use case.
 
 ### LED
 
