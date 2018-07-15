@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [1.1.1] - 2018-07-15
+### Changed
+- Fix installation from PyPI
+
 ## [1.1.0] - 2018-05-07
 ### Changed
 - Push development status to 'Beta'
@@ -46,7 +50,8 @@
 - Added some documentation
 - Released on GitHub and PyPI
 
-[Unreleased]: https://github.com/linusg/xbox360controller/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/linusg/xbox360controller/compare/v1.1.1...HEAD
+[1.1.1]: https://github.com/linusg/xbox360controller/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/linusg/xbox360controller/compare/v1.0.6...v1.1.0
 [1.0.6]: https://github.com/linusg/xbox360controller/compare/v1.0.5...v1.0.6
 [1.0.5]: https://github.com/linusg/xbox360controller/compare/v1.0.4...v1.0.5

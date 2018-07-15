@@ -1,8 +1,14 @@
 from setuptools import setup
 from xbox360controller import __version__
+import os
 
-with open('README.md', 'r') as f:
-    long_description = f.read()
+print(os.listdir())
+try:
+    with open('README.md', 'r') as f:
+        long_description = f.read()
+except FileNotFoundError as e:
+    print(e)
+    long_description = ""
 
 setup(
     name='xbox360controller',
