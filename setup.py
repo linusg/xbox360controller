@@ -4,7 +4,7 @@ from xbox360controller import __version__
 try:
     with open('README.md', 'r') as f:
         long_description = f.read()
-except FileNotFoundError:
+except (FileNotFoundError, UnicodeDecodeError):
     long_description = ""
 
 setup(
