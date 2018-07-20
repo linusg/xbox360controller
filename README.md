@@ -125,6 +125,8 @@ Please see [`CHANGES.md`](https://github.com/linusg/xbox360controller/blob/maste
 
 - Linus Groh ([**@linusg**](https://github.com/linusg/)) – mail@linusgroh.de
 
+Thanks to [**@VidyaPuri**](https://github.com/VidyaPuri/) and [**@jennib3**](https://github.com/jennib3/) for pointing out installation issues and providing a fix!
+
 ## License
 
 All the code and documentation are distributed under the MIT license. See [`LICENSE`](https://github.com/linusg/xbox360controller/blob/master/LICENSE) for more information.
