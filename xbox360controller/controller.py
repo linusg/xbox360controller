@@ -67,12 +67,14 @@ def _get_uptime():
         return uptime_seconds
 
 
-class RawAxis:
-    _value = 0
-    when_moved = None
+BOOT_TIME = time.time() - _get_uptime()
 
+
+class RawAxis:
     def __init__(self, name):
         self.name = name
+        self._value = 0
+        self.when_moved = None
 
     def __repr__(self):
         return "<xbox360controller.{cls} ({name})>".format(
@@ -88,12 +90,11 @@ class RawAxis:
 
 
 class Axis:
-    _value_x = 0
-    _value_y = 0
-    when_moved = None
-
     def __init__(self, name):
         self.name = name
+        self._value_x = 0
+        self._value_y = 0
+        self.when_moved = None
 
     def __repr__(self):
         return "<xbox360controller.{cls} ({name})>".format(
@@ -113,12 +114,11 @@ class Axis:
 
 
 class Button:
-    _value = False
-    when_pressed = None
-    when_released = None
-
     def __init__(self, name):
         self.name = name
+        self._value = False
+        self.when_pressed = None
+        self.when_released = None
 
     def __repr__(self):
         return "<xbox360controller.{cls} ({name})>".format(
@@ -130,7 +130,7 @@ class Button:
 
 
 class Xbox360Controller:
-    # https://github.com/paroj/xpad/blob/master/xpad.c#L1322
+    # https://github.com/paroj/xpad/blob/a6790a42800661d6bd658e9ba2215c0dc9bb2a44/xpad.c#L1355
     LED_OFF = 0
     LED_BLINK = 1
     LED_TOP_LEFT_BLINK_ON = 2
@@ -148,9 +148,6 @@ class Xbox360Controller:
     LED_BLINK_SLOW = 14
     LED_BLINK_ONCE_PREV = 15
 
-    _boot_time = time.time() - _get_uptime()
-    _ff_id = -1
-
     @classmethod
     def get_available(cls):
         return [cls(index) for index in
@@ -160,6 +157,7 @@ class Xbox360Controller:
         self.index = index
         self.axis_threshold = axis_threshold
         self.raw_mode = raw_mode
+        self._ff_id = -1
 
         try:
             self._dev_file = open(self._get_dev_file(), 'rb')
@@ -278,7 +276,7 @@ class Xbox360Controller:
         else:
             if buf:
                 time_, value, type_, number = struct.unpack('IhBB', buf)
-                time_ = round(self._boot_time + (time_ / 1000), 4)
+                time_ = round(BOOT_TIME + (time_ / 1000), 4)
                 is_init = bool(type_ & JS_EVENT_INIT)
                 return ControllerEvent(time=time_, type=type_, number=number,
                                        value=value, is_init=is_init)
