@@ -110,6 +110,32 @@ with Xbox360Controller() as controller:
     controller.info()
 ```
 
+The output may look like this:
+
+```
+Microsoft X-Box 360 pad at index 0
+Axes: 5
+	axis_l
+	axis_r
+	hat
+	trigger_l
+	trigger_r
+Buttons: 11
+	button_a
+	button_b
+	button_x
+	button_y
+	button_trigger_l
+	button_trigger_r
+	button_select
+	button_start
+	button_mode
+	button_thumb_l
+	button_thumb_r
+Rumble: yes
+Driver version: 2.1.0 1.0.1
+```
+
 ## Development/contributing
 
 This project is now in a somewhat stable state, and I really appreciate all kinds of contributions - may it be new or improved code, documentation or just a simple typo fix.
