@@ -337,10 +337,10 @@ class Xbox360Controller:
                     self.axis_r._value_y = val
                 if num == 5:
                     self.trigger_r._value = (val+1)/2
-                if num == 6:
-                    self.hat._value_x = int(val)
-                if num == 7:
-                    self.hat._value_y = int(val*-1)
+                # if num == 6: # Not sure if these are necessary for other controllers
+                #     self.hat._value_x = int(val)
+                # if num == 7:
+                #     self.hat._value_y = int(val*-1)
 
                 axis = [self.axis_l, self.axis_l, self.trigger_l,
                         self.axis_r, self.axis_r, self.trigger_r,
