@@ -285,6 +285,17 @@ class Xbox360Controller:
 
     def process_event(self, event):
         if event.type == JS_EVENT_BUTTON:
+
+            if event.number == 11:
+                self.hat._value_x = -int(event.value)
+            if event.number == 12:
+                self.hat._value_x = int(event.value)
+            if event.number == 13:
+                self.hat._value_y = int(event.value)
+            if event.number == 14:
+                self.hat._value_y = -int(event.value)
+
+
             try:
                 button = self.buttons[event.number]
             except IndexError:
