@@ -10,30 +10,30 @@ JS_EVENT_INIT = 0x80
 # https://github.com/torvalds/linux/blob/141e5dcaa7356077028b4cd48ec351a38c70e5e5/include/uapi/linux/joystick.h#L55-L67
 
 # get driver version
-JSIOCGVERSION = _IOR('j', 0x01, c_uint32)
+JSIOCGVERSION = _IOR("j", 0x01, c_uint32)
 
 # get number of axes
-JSIOCGAXES = _IOR('j', 0x11, c_uint8)
+JSIOCGAXES = _IOR("j", 0x11, c_uint8)
 
 # get number of buttons
-JSIOCGBUTTONS = _IOR('j', 0x12, c_uint8)
+JSIOCGBUTTONS = _IOR("j", 0x12, c_uint8)
 
 
 # get identifier string
 def JSIOCGNAME(len_):
-    return _IOC(_IOC_READ, 'j', 0x13, len_)
+    return _IOC(_IOC_READ, "j", 0x13, len_)
+
 
 # set axis mapping
-JSIOCSAXMAP = _IOW('j', 0x31, c_uint8)
+JSIOCSAXMAP = _IOW("j", 0x31, c_uint8)
 
 # get axis mapping
 # JSIOCGAXMAP = _IOR('j', 0x32, c_uint8)
-JSIOCGAXMAP = 0x80406a32
+JSIOCGAXMAP = 0x80406A32
 
 # set button mapping
-JSIOCSBTNMAP = _IOW('j', 0x33, c_uint16)
+JSIOCSBTNMAP = _IOW("j", 0x33, c_uint16)
 
 # get button mapping
 # JSIOCGBTNMAP = _IOR('j', 0x34, c_uint16)
-JSIOCGBTNMAP = 0x80406a34
-
+JSIOCGBTNMAP = 0x80406A34

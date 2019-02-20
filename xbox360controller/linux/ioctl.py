@@ -19,8 +19,12 @@ _IOC_READ = 2
 
 
 def _IOC(direction, type_, nr, size):
-    return (direction << _IOC_DIRSHIFT) | (ord(type_) << _IOC_TYPESHIFT) \
-        | (nr << _IOC_NRSHIFT) | (size << _IOC_SIZESHIFT)
+    return (
+        (direction << _IOC_DIRSHIFT)
+        | (ord(type_) << _IOC_TYPESHIFT)
+        | (nr << _IOC_NRSHIFT)
+        | (size << _IOC_SIZESHIFT)
+    )
 
 
 def _IO(g, n):

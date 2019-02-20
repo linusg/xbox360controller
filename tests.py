@@ -8,5 +8,5 @@ class TestMethods(unittest.TestCase):
         self.assertEqual(xbox360controller.Xbox360Controller.LED_OFF, 0)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
