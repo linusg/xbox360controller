@@ -1,7 +1,7 @@
 # xbox360controller
 > A pythonic Xbox360 controller API built on top of the `xpad` Linux kernel driver.
 
-[![PyPI Version][pypi-image]][pypi-url] [![Build Status][travis-image]][travis-url] [![Code Health][landscape-image]][landscape-url]
+[![PyPI Version][pypi-image]][pypi-url] [![Build Status][travis-image]][travis-url]
 
 This Python Package aims to provide a pythonic and complete API for your Xbox360 and similar game controllers.
 Currently it's built on top of the Linux kernel driver `xpad` so you can use it on almost any Linux distribution including your Rasperry Pi projects etc.
@@ -161,6 +161,3 @@ All the code and documentation are distributed under the MIT license. See [`LICE
 [pypi-url]: https://pypi.org/project/xbox360controller/
 [travis-image]: https://img.shields.io/travis/linusg/xbox360controller/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/linusg/xbox360controller
-[landscape-image]: https://landscape.io/github/linusg/xbox360controller/master/landscape.svg?style=flat-square
-[landscape-url]: https://landscape.io/github/linusg/xbox360controller
-
