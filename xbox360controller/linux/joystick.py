@@ -2,12 +2,12 @@ from ctypes import c_uint8, c_uint16, c_uint32
 
 from xbox360controller.linux.ioctl import _IOR, _IOC, _IOC_READ, _IOW
 
-# https://github.com/torvalds/linux/blob/master/include/uapi/linux/joystick.h#L44
+# https://github.com/torvalds/linux/blob/141e5dcaa7356077028b4cd48ec351a38c70e5e5/include/uapi/linux/joystick.h#L40-L42
 JS_EVENT_BUTTON = 0x01
 JS_EVENT_AXIS = 0x02
 JS_EVENT_INIT = 0x80
 
-# https://github.com/torvalds/linux/blob/master/include/uapi/linux/joystick.h#L61
+# https://github.com/torvalds/linux/blob/141e5dcaa7356077028b4cd48ec351a38c70e5e5/include/uapi/linux/joystick.h#L55-L67
 
 # get driver version
 JSIOCGVERSION = _IOR('j', 0x01, c_uint32)
@@ -36,3 +36,4 @@ JSIOCSBTNMAP = _IOW('j', 0x33, c_uint16)
 # get button mapping
 # JSIOCGBTNMAP = _IOR('j', 0x34, c_uint16)
 JSIOCGBTNMAP = 0x80406a34
+

@@ -1,10 +1,10 @@
-# https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h#L47
+# https://github.com/torvalds/linux/blob/141e5dcaa7356077028b4cd48ec351a38c70e5e5/include/uapi/linux/input-event-codes.h#L47
 EV_FF = 0x15
 
-# https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h#L342
+# https://github.com/torvalds/linux/blob/141e5dcaa7356077028b4cd48ec351a38c70e5e5/include/uapi/linux/input-event-codes.h#L342
 BTN_MISC = 0x100
 
-# https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h#L365
+# https://github.com/torvalds/linux/blob/141e5dcaa7356077028b4cd48ec351a38c70e5e5/include/uapi/linux/input-event-codes.h#L364-L398
 BTN_TRIGGER = 0x120
 BTN_THUMB = 0x121
 BTN_THUMB2 = 0x122
@@ -39,7 +39,7 @@ BTN_MODE = 0x13c
 BTN_THUMBL = 0x13d
 BTN_THUMBR = 0x13e
 
-# https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h#L717
+# https://github.com/torvalds/linux/blob/141e5dcaa7356077028b4cd48ec351a38c70e5e5/include/uapi/linux/input-event-codes.h#L722-L753
 ABS_X = 0x00
 ABS_Y = 0x01
 ABS_Z = 0x02
