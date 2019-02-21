@@ -317,22 +317,24 @@ class Xbox360Controller:
                 if num == 1:
                     self.axis_l._value_y = val
                 if num == 2:
-                    self.trigger_l._value = (val+1)/2
-                if num == 3:
                     self.axis_r._value_x = val
-                if num == 4:
+                if num == 3:
                     self.axis_r._value_y = val
+                if num == 4:
+                    self.trigger_r._value = (val + 1) / 2
                 if num == 5:
-                    self.trigger_r._value = (val+1)/2
+                    self.trigger_l._value = (val + 1) / 2
                 if num == 6:
                     self.hat._value_x = int(val)
                 if num == 7:
                     self.hat._value_y = int(val*-1)
 
-                axis = [self.axis_l, self.axis_l, self.trigger_l,
-                        self.axis_r, self.axis_r, self.trigger_r,
-                        self.hat, self.hat][num]
-
+                axis = [
+                    self.axis_l, self.axis_l,
+                    self.axis_r, self.axis_r,  # pay attention to this in future... these might have to be swapped again,
+                    self.trigger_r, self.trigger_l,
+                    self.hat, self.hat,
+                ][num]
             if axis.when_moved is not None and abs(val) > self.axis_threshold \
                     and callable(axis.when_moved):
                 axis.when_moved(axis)
