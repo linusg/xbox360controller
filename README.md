@@ -1,7 +1,13 @@
 # xbox360controller
 > A pythonic Xbox360 controller API built on top of the `xpad` Linux kernel driver.
 
-[![PyPI Version][pypi-image]][pypi-url] [![Build Status][travis-image]][travis-url]
+[![PyPI](https://img.shields.io/pypi/v/xbox360controller)](https://pypi.org/project/xbox360controller/)
+![Python Version](https://img.shields.io/pypi/pyversions/xbox360controller)
+[![Downloads](https://pepy.tech/badge/xbox360controller)](https://pepy.tech/project/xbox360controller)
+[![License](https://img.shields.io/github/license/linusg/xbox360controller?color=d63e97)](ttps://github.com/linusg/xbox360controller/blob/master/LICENSE)
+[![Black](https://img.shields.io/badge/code%20style-black-000000)](https://github.com/ambv/black)
+[![Travis CI](https://api.travis-ci.org/linusg/xbox360controller.svg?branch=master)](https://travis-ci.org/linusg/xbox360controller)
+[![Issues](https://img.shields.io/github/issues/linusg/xbox360controller)](https://github.com/linusg/xbox360controller/issues)
 
 This Python Package aims to provide a pythonic and complete API for your Xbox360 and similar game controllers.
 Currently it's built on top of the Linux kernel driver `xpad` so you can use it on almost any Linux distribution including your Rasperry Pi projects etc.
@@ -156,8 +162,3 @@ Thanks to [**@VidyaPuri**](https://github.com/VidyaPuri/) and [**@jennib3**](htt
 ## License
 
 All the code and documentation are distributed under the MIT license. See [`LICENSE`](https://github.com/linusg/xbox360controller/blob/master/LICENSE) for more information.
-
-[pypi-image]: https://img.shields.io/pypi/v/xbox360controller.svg?style=flat-square
-[pypi-url]: https://pypi.org/project/xbox360controller/
-[travis-image]: https://img.shields.io/travis/linusg/xbox360controller/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/linusg/xbox360controller
