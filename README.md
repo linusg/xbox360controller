@@ -4,7 +4,7 @@
 [![PyPI](https://img.shields.io/pypi/v/xbox360controller)](https://pypi.org/project/xbox360controller/)
 ![Python Version](https://img.shields.io/pypi/pyversions/xbox360controller)
 [![Downloads](https://pepy.tech/badge/xbox360controller)](https://pepy.tech/project/xbox360controller)
-[![License](https://img.shields.io/github/license/linusg/xbox360controller?color=d63e97)](ttps://github.com/linusg/xbox360controller/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/linusg/xbox360controller?color=d63e97)](https://github.com/linusg/xbox360controller/blob/master/LICENSE)
 [![Black](https://img.shields.io/badge/code%20style-black-000000)](https://github.com/ambv/black)
 [![Travis CI](https://api.travis-ci.org/linusg/xbox360controller.svg?branch=master)](https://travis-ci.org/linusg/xbox360controller)
 [![Issues](https://img.shields.io/github/issues/linusg/xbox360controller)](https://github.com/linusg/xbox360controller/issues)
