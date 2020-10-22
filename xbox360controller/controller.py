@@ -322,7 +322,7 @@ class Xbox360Controller:
                 if event.number == 14:
                     self.hat._value_y = -int(event.value)
 
-                axis_callback(self, self.hat)
+                self.axis_callback(self.hat)
 
             try:
                 button = self.buttons[event.number]
@@ -387,7 +387,7 @@ class Xbox360Controller:
                     self.hat,
                 ][num]
 
-            axis_callback(self, axis)
+            self.axis_callback(axis)
 
     @property
     def driver_version(self):
