@@ -299,7 +299,7 @@ class Xbox360Controller:
                     time=time_, type=type_, number=number, value=value, is_init=is_init
                 )
 
-    def axis_callback(self, axis):
+    def axis_callback(self, axis, val):
         if (
                 axis.when_moved is not None
                 and abs(val) > self.axis_threshold
@@ -315,14 +315,18 @@ class Xbox360Controller:
 
                 if event.number == 11:
                     self.hat._value_x = -int(event.value)
+                    val = self.hat._value_x
                 if event.number == 12:
                     self.hat._value_x = int(event.value)
+                    val = self.hat._value_x
                 if event.number == 13:
                     self.hat._value_y = int(event.value)
+                    val = self.hat._value_y
                 if event.number == 14:
                     self.hat._value_y = -int(event.value)
+                    val = self.hat._value_y
 
-                self.axis_callback(self.hat)
+                self.axis_callback(self.hat, val)
 
             try:
                 button = self.buttons[event.number]
@@ -387,7 +391,7 @@ class Xbox360Controller:
                     self.hat,
                 ][num]
 
-            self.axis_callback(axis)
+            self.axis_callback(axis, val)
 
     @property
     def driver_version(self):
