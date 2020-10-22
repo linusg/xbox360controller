@@ -5,6 +5,7 @@ Partly inspired by the following libraries/codes:
 - https://gist.github.com/rdb/8864666
 """
 
+import pdb
 import os
 import select
 import struct
@@ -310,6 +311,7 @@ class Xbox360Controller:
         if event.type == JS_EVENT_BUTTON:
 
             if event.number >= 11 and event.number <= 14:
+                pdb.set_trace()
 
                 if event.number == 11:
                     self.hat._value_x = -int(event.value)
