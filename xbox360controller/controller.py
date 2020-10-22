@@ -298,8 +298,33 @@ class Xbox360Controller:
                     time=time_, type=type_, number=number, value=value, is_init=is_init
                 )
 
+    def axis_callback(self, axis, val):
+        if (
+            axis.when_moved is not None
+            and abs(val) > self.axis_threshold
+            and callable(axis.when_moved)
+        ):
+            axis.when_moved(axis)
+
     def process_event(self, event):
         if event.type == JS_EVENT_BUTTON:
+
+            if event.number >= 11 and event.number <= 14:
+                if event.number == 11:
+                    self.hat._value_x = -int(event.value)
+                    val = self.hat._value_x
+                if event.number == 12:
+                    self.hat._value_x = int(event.value)
+                    val = self.hat._value_x
+                if event.number == 13:
+                    self.hat._value_y = int(event.value)
+                    val = self.hat._value_y
+                if event.number == 14:
+                    self.hat._value_y = -int(event.value)
+                    val = self.hat._value_y
+
+                self.axis_callback(self.hat, val)
+
             try:
                 button = self.buttons[event.number]
             except IndexError:
@@ -363,12 +388,7 @@ class Xbox360Controller:
                     self.hat,
                 ][num]
 
-            if (
-                axis.when_moved is not None
-                and abs(val) > self.axis_threshold
-                and callable(axis.when_moved)
-            ):
-                axis.when_moved(axis)
+            self.axis_callback(axis, val)
 
     @property
     def driver_version(self):
