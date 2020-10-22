@@ -309,7 +309,7 @@ class Xbox360Controller:
     def process_event(self, event):
         if event.type == JS_EVENT_BUTTON:
 
-            if event.number >= 11 || event.number <= 14:
+            if event.number >= 11 and event.number <= 14:
 
                 if event.number == 11:
                     self.hat._value_x = -int(event.value)
