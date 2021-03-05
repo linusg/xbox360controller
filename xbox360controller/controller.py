@@ -175,11 +175,9 @@ class Xbox360Controller:
         try:
             self._led_file = open(self._get_led_file(), "w")
         except PermissionError:
-            warnings.warn(
-                LED_PERMISSION_WARNING, UserWarning)
+            warnings.warn(LED_PERMISSION_WARNING, UserWarning)
         except FileNotFoundError:
-            warnings.warn(
-                LED_SUPPORT_WARNING, UserWarning)
+            warnings.warn(LED_SUPPORT_WARNING, UserWarning)
 
         if raw_mode:
             self.axes = self._get_axes()
