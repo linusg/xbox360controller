@@ -10,6 +10,7 @@ import select
 import struct
 import sys
 import time
+import warnings
 from array import array
 from collections import namedtuple
 from fcntl import ioctl
@@ -20,7 +21,7 @@ from xbox360controller.linux.input import *
 from xbox360controller.linux.input_event_codes import *
 from xbox360controller.linux.joystick import *
 
-LED_PERMISSION_WARNING = """Warning: Permission to the LED sysfs file was denied.
+LED_PERMISSION_WARNING = """Permission to the LED sysfs file was denied.
 You may run this script as user root or try creating a udev rule containing:
 
   SUBSYSTEM=="leds", RUN+="/bin/chmod 666 /sys/class/leds/%k/brightness"
@@ -28,7 +29,7 @@ You may run this script as user root or try creating a udev rule containing:
 E.g. in a file /etc/udev/rules.d/xpad.rules
 """
 
-LED_SUPPORT_WARNING = """Warning: Setting the LED status is not supported for
+LED_SUPPORT_WARNING = """Setting the LED status is not supported for
 this gamepad or its driver.
 """
 
@@ -170,18 +171,13 @@ class Xbox360Controller:
 
         self._event_file = open(self._get_event_file(), "wb")
 
-        def _led_error(msg):
-            sys.stderr.write(msg)
-            sys.stderr.flush()
-            time.sleep(0.1)
-            self._led_file = None
-
+        self._led_file = None
         try:
             self._led_file = open(self._get_led_file(), "w")
         except PermissionError:
-            _led_error(LED_PERMISSION_WARNING)
+            warnings.warn(LED_PERMISSION_WARNING, UserWarning)
         except FileNotFoundError:
-            _led_error(LED_SUPPORT_WARNING)
+            warnings.warn(LED_SUPPORT_WARNING, UserWarning)
 
         if raw_mode:
             self.axes = self._get_axes()
