@@ -155,11 +155,11 @@ class Xbox360Controller:
     def get_available(cls):
         return [cls(index) for index in range(len(glob("/dev/input/js*")))]
 
-    def __init__(self, index=0, axis_threshold=0.2, raw_mode=False, poll_interval=0.01):
+    def __init__(self, index=0, axis_threshold=0.2, raw_mode=False, event_timeout=1.0):
         self.index = index
         self.axis_threshold = axis_threshold
         self.raw_mode = raw_mode
-        self.poll_interval = poll_interval
+        self.event_timeout = event_timeout
         self._ff_id = -1
 
         try:
@@ -274,11 +274,10 @@ class Xbox360Controller:
             event = self.get_event()
             if event is not None and not event.is_init:
                 self.process_event(event)
-            time.sleep(self.poll_interval)
 
     def get_event(self):
         try:
-            r, w, e = select.select([self._dev_file], [], [], 0)
+            r, w, e = select.select([self._dev_file], [], [], self.event_timeout)
             if self._dev_file in r:
                 buf = self._dev_file.read(8)
             else:
