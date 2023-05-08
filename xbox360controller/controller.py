@@ -422,7 +422,7 @@ class Xbox360Controller:
     def name(self):
         buf = array("B", [0] * 64)
         ioctl(self._dev_file, JSIOCGNAME(len(buf)), buf)
-        return buf.tostring().decode()
+        return buf.tobytes().decode()
 
     def info(self):
         print("{0} at index {1}".format(self.name, self.index))
